@@ -1,0 +1,24 @@
+<div class="card mt-2 shadow">
+    <div class="card-header">
+        ADD Todo
+    </div>
+
+    <div class="card-body">
+        <app-add-todo (todo)="addTodo($event)"></app-add-todo>
+    </div>
+</div>
+
+<div class="card mt-2 shadow">
+    <div class="card-header">
+        Todo List
+          <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" ngModel name="key"  #key="ngModel" (ngModelChange)="onSearch(key.value)" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="onSearch(key.value)">Search</button>
+      </form>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of todos" [ngClass]="item.isDone ? 'done' : 'notDone'"><app-todo-item [todo]="item"></app-todo-item></li>
+        </ul>
+    </div>
+</div>

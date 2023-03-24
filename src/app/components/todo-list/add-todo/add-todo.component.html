@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12">
+        <form action="" #add="ngForm" (submit)="addNewTodo(add)"> 
+            <div>
+                <label class="form-group" for="name">Name</label>
+                <input class="form-control" type="text" ngModel name="name" id="name" placeholder="Name of the Todo">
+            </div>
+
+            <div>
+                <label class="form-group" for="date">Date</label>
+                <input class="form-control" type="date" ngModel name="date" id="date" placeholder="The Date of the Todo">
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" ngModel name="isDone" id="isDone" >
+                <label class="form-group" for="isDone">Is Done</label>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</div>

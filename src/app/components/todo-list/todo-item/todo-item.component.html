@@ -1,0 +1,3 @@
+{{todo.name}} {{todo.date | date}} 
+
+<input type="checkbox" name="isDone" id="isDone" [defaultChecked]="todo.isDone" (change)="todo.isDone = !todo.isDone">

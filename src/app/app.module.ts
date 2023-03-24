@@ -2,15 +2,37 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoItemComponent } from './components/todo-list/todo-item/todo-item.component';
+import { AddTodoComponent } from './components/todo-list/add-todo/add-todo.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { TodosService } from './services/todosService.service';
+
+const appRouter: Routes = [
+  {path: "about" , component: AboutComponent},
+  {path: "" , component: TodoListComponent},
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoListComponent,
+    TodoItemComponent,
+    AddTodoComponent,
+    HeaderComponent,
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, 
+    FormsModule,
+    RouterModule.forRoot(appRouter)
   ],
-  providers: [],
+  providers: [TodosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

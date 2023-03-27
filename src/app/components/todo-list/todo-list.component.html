@@ -17,8 +17,11 @@
       </form>
     </div>
     <div class="card-body">
-        <ul class="list-group">
-            <li class="list-group-item" *ngFor="let item of todos" [ngClass]="item.isDone ? 'done' : 'notDone'"><app-todo-item [todo]="item"></app-todo-item></li>
+        <ul class="list-group" *ngIf="todos.length !== 0">
+            <li class="list-group-item" *ngFor="let item of todos" [ngClass]="item.isDone ? 'done' : 'notDone'"><app-todo-item [todo]="item" (onDelete)="onDelete($event)"></app-todo-item></li>
         </ul>
+
+        <p class="text text-danger" style="border: 1px solid red;;" *ngIf="todos.length === 0">No Task more</p>
+        
     </div>
 </div>

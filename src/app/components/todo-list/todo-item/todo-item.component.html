@@ -1,3 +1,13 @@
-{{todo.name}} {{todo.date | date}} 
+<div class="row">
+    <div class="col-sm">
+        {{todo.name}} {{todo.date | date}} 
+    </div>
 
-<input type="checkbox" name="isDone" id="isDone" [defaultChecked]="todo.isDone" (change)="todo.isDone = !todo.isDone">
+    <div class="col-sm">
+        <input type="checkbox" name="isDone" id="isDone" [defaultChecked]="todo.isDone" (change)="todo.isDone = !todo.isDone">
+    </div>
+
+    <div class="col-sm">
+        <button class="btn btn-sm btn-outline-danger" type="submit" (click)="onDeleteTodo(todo)">Delete</button>
+    </div>
+</div>

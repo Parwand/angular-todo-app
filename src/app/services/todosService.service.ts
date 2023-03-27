@@ -2,6 +2,7 @@ import { Todo } from "../models/todo.model";
 
 export class TodosService {
    
+   
     public todos:Todo [] = [
         new Todo("Spring boot", new Date("12 Dec 2018"), true),
         new Todo("Spring Security", new Date("13 Jan 2018"), true),
@@ -27,7 +28,11 @@ export class TodosService {
                 result.push(todo);
             }
         }
-
         return result;
+    }
+
+
+    deleteTodo(todo: Todo) {
+        this.todos = this.todos.filter((item)=> {return item !== todo});
     }
 }

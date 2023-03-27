@@ -24,4 +24,9 @@ export class TodoListComponent implements OnInit{
   onSearch(key:string) {
     this.todos=  this.todosService.searchTodo(key);
   }
+
+  onDelete(todo:Todo) {
+    this.todosService.deleteTodo(todo);
+    this.todos = this.todosService.getTodos();
+  }
 }

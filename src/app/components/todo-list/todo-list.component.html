@@ -1,27 +1,35 @@
-<div class="card mt-2 shadow">
-    <div class="card-header">
-        ADD Todo
-    </div>
+<div class="row">
+    <div class="col-4">
 
-    <div class="card-body">
-        <app-add-todo (todo)="addTodo($event)"></app-add-todo>
-    </div>
-</div>
-
-<div class="card mt-2 shadow">
-    <div class="card-header">
-        Todo List
-          <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" ngModel name="key"  #key="ngModel" (ngModelChange)="onSearch(key.value)" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="onSearch(key.value)">Search</button>
-      </form>
-    </div>
-    <div class="card-body">
-        <ul class="list-group" *ngIf="todos.length !== 0">
-            <li class="list-group-item" *ngFor="let item of todos" [ngClass]="item.isDone ? 'done' : 'notDone'"><app-todo-item [todo]="item" (onDelete)="onDelete($event)"></app-todo-item></li>
-        </ul>
-
-        <p class="text text-danger" style="border: 1px solid red;;" *ngIf="todos.length === 0">No Task more</p>
+        <div class="card mt-2 shadow">
+            <div class="card-header">
+                ADD Todo
+            </div>
         
+            <div class="card-body">
+                <app-add-todo (todo)="addTodo($event)"></app-add-todo>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="col-8">
+        <div class="card mt-2 shadow">
+            <div class="card-header">
+                Todo List
+                  <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" ngModel name="key"  #key="ngModel" (ngModelChange)="onSearch(key.value)" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="onSearch(key.value)">Search</button>
+              </form>
+            </div>
+            <div class="card-body">
+                <ul class="list-group" *ngIf="todos.length !== 0">
+                    <li class="list-group-item" *ngFor="let item of todos" [ngClass]="item.isDone ? 'done' : 'notDone'"><app-todo-item [todo]="item" (onDelete)="onDelete($event)"></app-todo-item></li>
+                </ul>
+        
+                <p class="text text-danger" style="border: 1px solid red;;" *ngIf="todos.length === 0">No Task more</p>
+                
+            </div>
+        </div>
     </div>
 </div>

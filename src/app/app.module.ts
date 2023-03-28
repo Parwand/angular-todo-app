@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoItemComponent } from './components/todo-list/todo-item/todo-item.component';
-import { AddTodoComponent } from './components/todo-list/add-todo/add-todo.component';
+import { TodoFormComponent } from './components/todo-list/todo-form/todo-form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -22,7 +22,7 @@ const appRouter: Routes = [
     AppComponent,
     TodoListComponent,
     TodoItemComponent,
-    AddTodoComponent,
+    TodoFormComponent,
     HeaderComponent,
     AboutComponent,
     FooterComponent

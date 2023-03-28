@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-md-12">
-        <form action="" #add="ngForm" (submit)="addNewTodo(add)"> 
+        <form action="" #add="ngForm" (submit)="addNewTodo(add)" ngNativeValidate> 
             <div>
                 <label class="form-group" for="name">Name</label>
-                <input class="form-control" type="text" ngModel name="name" id="name" placeholder="Name of the Todo">
+                <input class="form-control" type="text" ngModel name="name" id="name" placeholder="Name of the Todo" required>
             </div>
 
             <div>
                 <label class="form-group" for="date">Date</label>
-                <input class="form-control" type="date" ngModel name="date" id="date" placeholder="The Date of the Todo">
+                <input class="form-control" type="date" ngModel name="date" id="date" placeholder="The Date of the Todo" required>
             </div>
 
             <div class="form-check">

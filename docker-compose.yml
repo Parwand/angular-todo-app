@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  deploy-prod:
+    build: .
+    image: angular-todo-app-prod
+    container_name: angular-todo-app-prod
+    ports:
+      - "433:80"
+    networks:
+      - todo-app-net
+
+networks:
+  todo-app-net:
+    name: todo-app-net
+    driver: bridge
